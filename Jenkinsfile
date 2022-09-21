@@ -1,4 +1,8 @@
 pipeline{
+    environment{
+        registry = 'jpcampos24/demo-assessment'
+        registryCredential= 'ee19e771-139b-4f8e-87e9-9cc020e72f08'
+    }
     agent {
         docker{
             image "cypress/base:16.16.0"
@@ -33,6 +37,26 @@ pipeline{
                 echo "Deploying"
             }
         }
-    }
+
+        stage(' Building Image'){
+            steps {
+                 dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+            }
+        }
+
+        stage(' Deploying Image'){
+            steps {
+                 docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+                }
+            }        
+        }
+
+        stage(' Cleanining up'){
+            steps {
+                 sh "docker rmi $registry:$BUILD_NUMBER"
+                }
+            }        
+        }
 
 }
