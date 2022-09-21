@@ -21,7 +21,7 @@ pipeline{
 
                 stage('Testing Image') {
             steps {
-                sh 'docker run -i -v "%cd%":/demo-assessment -t jpcampos24/demo-assessment-image:latest'
+                sh 'docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest'
             }
         }
 
