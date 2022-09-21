@@ -1,16 +1,12 @@
-#Base image taken from:https://github.com/cypress-io/cypress-docker-images
-FROM cypress/browsers:node16.16.0-chrome105-ff99-edge
-#Create the folder where our project will be stored
-RUN mkdir /demo-assessment
-#We make it our workdirectory
-WORKDIR /demo-assessment
-#Let's copy the essential files that we MUST use to run our scripts.
-COPY ./package.json .
-COPY ./cypress.config.js .
-COPY ./cypress ./cypress
-#Install the cypress dependencies in the work directory
-RUN npm install
-#Executable commands the container will use[Exec Form]
-ENTRYPOINT ["npx","cypress","run"]
-#With CMD in this case, we can specify more parameters to the last entrypoint.
-CMD [""]    
+FROM jenkins/jenkins:2.361.1-jdk11
+USER root
+RUN apt-get update && apt-get install -y lsb-release
+RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
+  https://download.docker.com/linux/debian/gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
+  https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+RUN apt-get update && apt-get install -y docker-ce-cli
+USER jenkins
+RUN jenkins-plugin-cli --plugins "blueocean:1.25.8 docker-workflow:521.v1a_a_dd2073b_2e"  
