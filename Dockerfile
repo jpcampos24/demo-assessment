@@ -1,5 +1,5 @@
 #Base image taken from: https://github.com/cypress-io/cypress-docker-images
-FROM cypress/base:16.16.0
+FROM cypress/included:10.8.0
 #Create the folder where our project will be stored
 RUN mkdir /demo-assessment
 # Make it the work directory
