@@ -7,10 +7,7 @@ pipeline{
 
     tools{nodejs "node"}
 
-    parameters {
-        string(name: 'SPEC', defaultValue: 'cypress/e2e/1-getting-started/**', description: 'running specs')
-        choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
-    }
+
 
     stages {
         
@@ -25,7 +22,7 @@ pipeline{
             steps {
                 sh 'npm install'
                 sh 'npm install cypress'
-                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                sh "npx cypress run"
             }
         }
         
