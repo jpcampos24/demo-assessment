@@ -1,7 +1,6 @@
 pipeline{
     environment{
-        registry = 'jpcampos24/demo-assessment'
-        registryCredential= 'ee19e771-139b-4f8e-87e9-9cc020e72f08'
+        DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
     
     agent any
@@ -13,17 +12,10 @@ pipeline{
     }
 
     stages {
-        
-        stage('Build'){
-            //The steps section defines a series of one or more steps to be executed in a given stage directive.
-            steps {
-                echo "Building the application"
-            }
-        }
 
         stage(' Building Image'){
             steps {
-                 dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                 sh 'docker build -t jpcampos24/demo-assessment-image:latest .'
             }
         }
 
@@ -37,17 +29,22 @@ pipeline{
 
         stage(' Deploying Image'){
             steps {
-                 docker.withRegistry( '', registryCredential ) { 
-                        dockerImage.push() 
+                 sh 'docker push jpcampos24/demo-assessment-image:latest .'
                 }
-            }        
-        }
+        }        
+        
 
         stage(' Cleanining up'){
             steps {
                  sh "docker rmi $registry:$BUILD_NUMBER"
                 }
-            }        
         }
+    }
 
+    post {
+		always {
+			sh 'docker logout'
+		}
+	}        
 }
+
