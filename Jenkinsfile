@@ -3,11 +3,8 @@ pipeline{
         registry = 'jpcampos24/demo-assessment'
         registryCredential= 'ee19e771-139b-4f8e-87e9-9cc020e72f08'
     }
-    agent {
-        docker{
-            image "cypress/base:16.16.0"
-        }
-    }
+    
+    agent any
 
     tools{nodejs "node"}
 
@@ -23,24 +20,18 @@ pipeline{
                 echo "Building the application"
             }
         }
-        
-        stage('Testing') {
-            steps {
-                sh 'npm install'
-                sh 'npm install cypress'
-                sh "npx cypress run"
-            }
-        }
-        
-        stage('Deploy'){
-            steps {
-                echo "Deploying"
-            }
-        }
 
         stage(' Building Image'){
             steps {
                  dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+            }
+        }
+
+                stage('Testing Image') {
+            steps {
+                sh 'npm install'
+                sh 'npm install cypress'
+                sh "npx cypress run"
             }
         }
 
