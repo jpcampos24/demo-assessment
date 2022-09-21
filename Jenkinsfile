@@ -1,5 +1,9 @@
 pipeline{
-    agent any
+    agent {
+        docker{
+            image "cypress/base:16.16.0"
+        }
+    }
 
     tools{nodejs "node"}
 
