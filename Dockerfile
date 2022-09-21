@@ -10,7 +10,7 @@ COPY ./cypress.config.js .
 COPY ./cypress ./cypress
 #Install cypress dependencies
 RUN npm install
-RUN npm cypress
+RUN npm install cypress
 #Commands the container will use
 ENTRYPOINT ["npx", "cypress", "run"]
 #Specify more parameters to the last entrypoint
