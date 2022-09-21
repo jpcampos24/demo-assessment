@@ -1,5 +1,5 @@
 #Base image taken from: https://github.com/cypress-io/cypress-docker-images
-FROM cypress/browsers:node18.6.0-chrome105-ff104
+FROM cypress/base:16.16.0
 #Create the folder where our project will be stored
 RUN mkdir /demo-assessment
 # Make it the work directory
