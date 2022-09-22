@@ -5,8 +5,6 @@ pipeline{
     
     agent any
 
-    tools{nodejs "node"}
-
     options {
         ansiColor('xterm')
     }
