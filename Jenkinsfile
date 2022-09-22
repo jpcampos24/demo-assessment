@@ -21,6 +21,7 @@ pipeline{
 
         stage(' Deploying Image'){
             steps {
+                sh 'docker login $DOCKERHUB_CREDENTIALS'
                  sh 'docker push jpcampos24/demo-assessment-image:latest .'
                 }
         }        
