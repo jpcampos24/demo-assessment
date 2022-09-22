@@ -7,6 +7,11 @@ pipeline{
 
     tools{nodejs "node"}
 
+    parameters{
+        string(name: "SPEC", defaultValue: "cypress/e2e/**", description: "Corriendo todos los specs")
+        choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "Escoja el browser para correr los specs")
+    }
+
     options {
         ansiColor('xterm')
     }
@@ -21,7 +26,8 @@ pipeline{
 
                 stage('Testing Image') {
             steps {
-                sh 'docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest --spec cypress/e2e/1-getting-started/.*js'
+                sh 'npm install'
+                sh 'npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}'
             }
         }
 
