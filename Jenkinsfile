@@ -24,9 +24,7 @@ pipeline{
 
                 stage('Testing Image') {
             steps {
-                sh 'npm install'
-                sh 'npx cypress install --force'
-                sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
+                sh 'docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest'
             }
         }
 
