@@ -10,6 +10,23 @@ COPY ./cypress.config.js .
 COPY ./cypress ./cypress
 #Install cypress dependencies
 RUN npm install
+RUN apt-get update && \
+  apt-get install --no-install-recommends -y \
+  # install cypress system dependencies
+  libgtk2.0-0 \
+  libgtk-3-0 \
+  libnotify-dev \
+  libgconf-2-4 \
+  libgbm-dev \
+  libnss3 \
+  libxss1 \
+  libasound2 \
+  libxtst6 \
+  tidy \
+  xauth \
+  xvfb \
+  # clean up
+  && rm -rf /var/lib/apt/lists/*
 #Commands the container will use
 ENTRYPOINT ["npx", "cypress", "run"]
 #Specify more parameters to the last entrypoint

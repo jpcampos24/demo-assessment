@@ -3,10 +3,7 @@ pipeline{
         DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
 
-    agent any
-
-    tools{nodejs "node"
-        xvfb "default Xvfb"}
+    agent {dockerfile true}
 
     parameters{
         string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Corriendo todos los specs")
