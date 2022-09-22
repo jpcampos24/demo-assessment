@@ -3,7 +3,7 @@ pipeline{
         DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
     
-    agent {docker{image "cypress/included:10.8.0"}}
+    agent {docker{image 'cypress/included:10.8.0'}}
 
     options {
         ansiColor('xterm')
