@@ -2,13 +2,10 @@ pipeline{
     environment{
         DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
+    
+    agent any
 
-    agent {dockerfile true}
-
-    parameters{
-        string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Corriendo todos los specs")
-        choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "Escoja el browser para correr los specs")
-    }
+    tools{nodejs "node"}
 
     options {
         ansiColor('xterm')
@@ -24,7 +21,7 @@ pipeline{
 
                 stage('Testing Image') {
             steps {
-                sh 'docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest'
+                sh 'docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest --spec cypress/e2e/1-getting-started/.*js --browser chrome'
             }
         }
 
