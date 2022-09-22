@@ -3,19 +3,16 @@ pipeline{
         DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
     
-    agent any
+    agent {docker{image "cypress/included:10.8.0"}}
 
     options {
         ansiColor('xterm')
     }
 
-    tools{nodejs "node"}
-
     stages {
 
         stage(' Testting e2er'){
             steps {
-                 sh 'npm install'
                  sh 'npx cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser chrome '
             }
         }
