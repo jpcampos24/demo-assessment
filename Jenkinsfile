@@ -28,7 +28,7 @@ pipeline{
             steps {
                 sh 'npm install'
                 sh 'npx cypress install --force'
-                sh 'npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}'
+                sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
             }
         }
 
