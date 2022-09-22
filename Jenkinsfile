@@ -15,6 +15,7 @@ pipeline{
 
         stage(' Building Image'){
             steps {
+                sh 'docker logout'
                  sh 'docker build -t jpcampos24/demo-assessment-image:latest .'
             }
         }
