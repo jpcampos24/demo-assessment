@@ -35,7 +35,6 @@ pipeline{
 
     post {
 		always {
-            sh 'docker image rm'
 			sh 'docker logout'
             
 		}
