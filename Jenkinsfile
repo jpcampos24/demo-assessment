@@ -21,6 +21,7 @@ pipeline{
 
         stage(' Deploying Image'){
             steps {
+                 sh 'docker login -u ${DOCKERHUB_CREDENTIALS}'
                  sh 'docker push jpcampos24/demo-assessment-image:latest'
                 }
         }        
@@ -34,7 +35,7 @@ pipeline{
     }
 
     post {
-		always {
+		always { 
 			sh 'docker logout'
             
 		}
