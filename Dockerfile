@@ -28,6 +28,6 @@ RUN apt-get update && \
   # clean up
   && rm -rf /var/lib/apt/lists/*
 #Commands the container will use
-ENTRYPOINT ["npx", "cypress", "run"]
+ENTRYPOINT ["docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest"]
 #Specify more parameters to the last entrypoint
 CMD [""]
