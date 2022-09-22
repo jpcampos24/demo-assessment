@@ -11,5 +11,4 @@ COPY ./cypress ./cypress
 # execute the tests
 RUN npm install
 RUN $(npm bin)/cypress verify
-RUN $(npm bin)/cypress run --browser firefox
-RUN $(npm bin)/cypress run --browser chrome 
+RUN $(npm bin)/cypress run --spec "cypress/e2e/1-getting-started/.*js" --browser chrome 
