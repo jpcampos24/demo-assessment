@@ -3,7 +3,9 @@ pipeline{
         DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
     
-    agent any
+    agent {
+        docker{image "cypress/included:10.8.0"}
+    }
 
     tools{nodejs "node"}
 
@@ -27,6 +29,7 @@ pipeline{
                 stage('Testing Image') {
             steps {
                 sh 'npm install'
+
                 sh 'npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}'
             }
         }
