@@ -21,7 +21,10 @@ pipeline{
 
                 stage('Testing Image') {
             steps {
-                sh 'docker run -v $PWD:/demo-assessment -t jpcampos24/demo-assessment-image:latest --spec cypress/e2e/1-getting-started/.*js --browser chrome'
+                sh 'docker run 
+                -v $PWD:/demo-assessment
+                -t jpcampos24/demo-assessment-image:latest 
+                --spec cypress/e2e/1-getting-started/.*js --browser chrome'
             }
         }
 

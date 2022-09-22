@@ -10,6 +10,7 @@ COPY ./cypress.config.js .
 COPY ./cypress ./cypress
 #Install the cypress dependencies in the work directory
 RUN npm install
+RUN npm install cypress
 # Install Cypress dependencies (separate commands to avoid time outs)
 RUN apt-get install -y \
     libgtk2.0-0
