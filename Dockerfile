@@ -12,4 +12,4 @@ COPY ./cypress ./cypress
 RUN npm install
 RUN npm install cypress
 RUN $(npm bin)/cypress verify
-RUN $(npm bin)/cypress run --spec "cypress/e2e/1-getting-started/*" --browser chrome 
+RUN $(npm bin)/cypress run --spec "cypress/e2e/1-getting-started/*"
