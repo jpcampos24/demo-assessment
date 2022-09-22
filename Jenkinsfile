@@ -21,7 +21,7 @@ pipeline{
 
         stage(' Deploying Image'){
             steps {
-                 sh 'docker push jpcampos24/demo-assessment-image:latest .'
+                 sh 'docker push jpcampos24/demo-assessment-image:latest'
                 }
         }        
         
