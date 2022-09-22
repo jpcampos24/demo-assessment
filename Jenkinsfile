@@ -9,6 +9,8 @@ pipeline{
         ansiColor('xterm')
     }
 
+    tools{nodejs "node"}
+
     stages {
 
         stage(' Testting e2er'){
