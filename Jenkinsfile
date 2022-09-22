@@ -8,7 +8,7 @@ pipeline{
     tools{nodejs "node"}
 
     parameters{
-        string(name: "SPEC", defaultValue: "cypress/e2e/**", description: "Corriendo todos los specs")
+        string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Corriendo todos los specs")
         choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "Escoja el browser para correr los specs")
     }
 
