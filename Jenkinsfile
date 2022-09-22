@@ -5,7 +5,8 @@ pipeline{
 
     agent any
 
-    tools{nodejs "node"}
+    tools{nodejs "node"
+        xvfb "default Xvfb"}
 
     parameters{
         string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Corriendo todos los specs")
