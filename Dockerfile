@@ -6,6 +6,7 @@ RUN mkdir /demo-assessment
 WORKDIR /demo-assessment
 #Let's copy the essential files that we MUST use to run our scripts.
 ENV ELECTRON_EXTRA_LAUNCH_ARGS=--disable-gpu
+ENV LIBVA_DRIVER_NAME=radeonsi
 COPY ./package.json .
 COPY ./cypress.config.js .
 COPY ./cypress ./cypress
