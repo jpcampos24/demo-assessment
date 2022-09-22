@@ -29,7 +29,7 @@ pipeline{
 
         stage(' Cleanining up'){
             steps {
-                 sh "docker rmi $registry:$BUILD_NUMBER"
+                 sh "docker rmi jpcampos24/demo-assessment-image:latest"
                 }
         }
     }
