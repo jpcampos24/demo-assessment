@@ -17,7 +17,7 @@ pipeline{
             steps {
                  sh 'npm install'
                  sh 'npm install cypress'
-                 sh 'npx cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser chrome '
+                 sh 'npx cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser electron '
             }
         }
 
