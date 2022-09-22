@@ -27,7 +27,7 @@ pipeline{
                 stage('Testing Image') {
             steps {
                 sh 'npm install'
-                sh 'npx cypress install'
+                sh 'npx cypress install --force'
                 sh 'npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}'
             }
         }
