@@ -5,7 +5,7 @@ RUN mkdir /demo-assessment
 #We make it our workdirectory
 WORKDIR /demo-assessment
 #Let's copy the essential files that we MUST use to run our scripts.
-ENV EXTRA_LAUNCH_ARGS=--disable-gpu
+ENV CHROMIUM_EXTRA_LAUNCH_ARGS=--disable-gpu
 COPY ./package.json .
 COPY ./cypress.config.js .
 COPY ./cypress ./cypress
