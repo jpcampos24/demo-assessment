@@ -3,7 +3,7 @@ pipeline{
         DOCKERHUB_CREDENTIALS=credentials('ee19e771-139b-4f8e-87e9-9cc020e72f08')
     }
     
-    agent any
+    agent {docker{image 'cypress/included:10.8.0'}}
 
     options {
         ansiColor('xterm')
@@ -17,7 +17,7 @@ pipeline{
             steps {
                  sh 'npm install'
                  sh 'npm install cypress'
-                 sh 'npx cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser electron '
+                 sh 'npx cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser chrome '
             }
         }
 
