@@ -11,8 +11,9 @@ ENV LIBVA_DRIVER_NAME=--disable-software-rasterizer
 COPY ./package.json .
 COPY ./cypress.config.js .
 COPY ./cypress ./cypress
-# execute the tests
+#Install cypress dependencies
 RUN npm install
-RUN npm install cypress
-RUN $(npm bin)/cypress verify
-RUN $(npm bin)/cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser chrome 
+#Commands the container will use
+ENTRYPOINT ["npx", "cypress", "run"]
+#Specify more parameters to the last entrypoint
+CMD [""]

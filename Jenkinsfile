@@ -11,6 +11,14 @@ pipeline{
 
     stages {
 
+        stage(' Testting e2er'){
+            steps {
+                 sh 'npm install'
+                 sh 'npm install cypress'
+                 sh 'npx cypress run --headless --spec "cypress/e2e/1-getting-started/*" --browser chrome '
+            }
+        }
+
         stage(' Building Image'){
             steps {
                  sh 'docker build -t jpcampos24/demo-assessment-image:latest .'
