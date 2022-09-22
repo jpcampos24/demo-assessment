@@ -4,7 +4,7 @@ pipeline{
     }
 
     agent any
-    
+
     tools{nodejs "node"}
 
     parameters{
@@ -27,7 +27,7 @@ pipeline{
                 stage('Testing Image') {
             steps {
                 sh 'npm install'
-                sh 'npm install cypress'
+                sh 'npx cypress install'
                 sh 'npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}'
             }
         }
