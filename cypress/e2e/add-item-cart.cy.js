@@ -21,4 +21,11 @@ describe('add an Today deals item to the cart', () => {
     it('should search the item', () => {
         searchItem.searchItem('Computers')
      })
+
+    //this function add the item to the cart
+    it('should add the item to the cart', () =>{
+        addItem.openItem('//div[@cel_widget_id="MAIN-SEARCH_RESULTS-1"]')
+        addItem.addToCart('//input[@id="add-to-cart-button"]')
+        addItem.validateItemAdded('//div[@id="attachDisplayAddBaseAlert"]')
+    })
 })
