@@ -18,3 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+//Enable support for Xpath
+import "cypress-xpath";
+require('cypress-xpath')

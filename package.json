@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/jpcampos24/demo-assessment/issues"
   },
-  "homepage": "https://github.com/jpcampos24/demo-assessment#readme"
+  "homepage": "https://github.com/jpcampos24/demo-assessment#readme",
+  "dependencies": {
+    "cypress": "^10.9.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
+  }
 }
