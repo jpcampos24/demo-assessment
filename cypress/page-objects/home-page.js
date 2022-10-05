@@ -6,17 +6,17 @@ export class HomePage {
     }
     //navigate to the main page to test
     navigate(){
-        cy.visit('https://www.amazon.com/')
+        cy.visit('http://automationpractice.com/index.php')
     }
     
     //validate the main page load correctly
     validateHomePage(){
-        cy.xpath('//a[@id="nav-logo-sprites"]', {timeout: 50000}).should('be.visible')
+        cy.xpath('//div[@id="header_logo"]').should('be.visible')
     }
 
     //go to the main page
     goToMainPage(){
-        cy.xpath('//a[@id="nav-logo-sprites"]').click()
+        cy.xpath('//div[@id="header_logo"]').click()
     }
 
 }

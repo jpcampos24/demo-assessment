@@ -7,7 +7,7 @@ export class AddItem {
     
     //add to the cart button selection
     addToCart(xpathAddItemButton){
-        cy.xpath(xpathAddItemButton, {timeout: 50000}).click()
+        cy.xpath(xpathAddItemButton).click()
     }
 
     //validate the item was added
