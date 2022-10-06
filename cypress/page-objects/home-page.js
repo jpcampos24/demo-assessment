@@ -4,19 +4,30 @@ export class HomePage {
     setUpViewport(){
         cy.viewport(1536, 960) 
     }
+
     //navigate to the main page to test
     navigate(){
-        cy.visit('http://automationpractice.com/index.php')
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     }
     
     //validate the main page load correctly
     validateHomePage(){
-        cy.xpath('//div[@id="header_logo"]').should('be.visible')
+        cy.xpath('//img[@alt="company-branding"]').should('be.visible')
     }
 
-    //go to the main page
-    goToMainPage(){
-        cy.xpath('//div[@id="header_logo"]').click()
+    //write user to login
+    loginUser(user){
+        cy.xpath('//input[@name="username"]').type(user)
+    }
+    
+    //write password login
+    loginPassword(password){
+        cy.xpath('//input[@name="password"]').type(password)
+    }
+
+    //login button
+    loginButton(){
+        cy.xpath('//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]').click()
     }
 
 }
