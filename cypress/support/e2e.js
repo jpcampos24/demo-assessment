@@ -22,3 +22,5 @@ import './commands'
 //Enable support for Xpath
 import "cypress-xpath";
 require('cypress-xpath')
+
+import '@bahmutov/cy-api'
