@@ -16,8 +16,8 @@ pipeline{
         stage(' Testting e2er'){
             steps {
                  sh 'npm install'
-                 sh 'npx cypress run --headless --spec "cypress/e2e/*"'
                  sh 'npx cypress run --headless --spec "cypress/e2e/api-tests/*"'
+                 sh 'npx cypress run --headless --spec "cypress/e2e/*"'
             }
         }
 
