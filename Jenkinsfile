@@ -17,6 +17,7 @@ pipeline{
             steps {
                  sh 'npm install'
                  sh 'npx cypress run --headless --spec "cypress/e2e/*"'
+                 sh 'npx cypress run --headless --spec "cypress/e2e/api-tests/*"'
             }
         }
 
