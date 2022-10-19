@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/jpcampos24/demo-assessment#readme",
   "dependencies": {
-    "cypress": "^10.9.0"
+    "cypress": "^10.9.0",
+    "cypress-mongodb": "^5.1.1"
   },
   "devDependencies": {
     "@bahmutov/cy-api": "^2.2.1",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "mysql": "^2.18.1"
   }
 }
