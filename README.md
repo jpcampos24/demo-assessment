@@ -3,7 +3,7 @@
 ## Description
 This repo is going to envolve all the demo assessment needed for a seniority position, envolving UI tests, API tests and DB tests.
 
-# Run the project locally
+## Run the project locally
 
 The project can be executed locally running any of the following commands
 ```
