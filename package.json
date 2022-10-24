@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@bahmutov/cy-api": "^2.2.1",
-    "cypress-xpath": "^2.0.1",
+    "@cypress/xpath": "^2.0.2",
     "mysql": "^2.18.1"
   }
 }
