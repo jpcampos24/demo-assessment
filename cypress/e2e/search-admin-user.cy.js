@@ -1,4 +1,4 @@
-/// <reference types="cypress-xpath" />
+/// <reference types="@cypress/xpath" />
 
 import { AdminPage } from "../page-objects/admin-page"
 import { HomePage } from "../page-objects/home-page"

@@ -1,4 +1,4 @@
-/// <reference types="cypress-xpath" />
+/// <reference types="@cypress/xpath" />
 
 import { HomePage } from "../page-objects/home-page"
 import { MyInfoPage } from "../page-objects/myinfo-page"
