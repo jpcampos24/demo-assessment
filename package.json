@@ -6,7 +6,8 @@
   "scripts": {
     "cy:open:staging": "npx cypress@10 open --config-file staging-configuration.config.js",
     "cy:run:api:staging": "npx cypress@10 run --config-file staging-configuration.config.js  --spec 'cypress/e2e/api-tests/*'",
-    "cy:run:ui:staging": "npx cypress@10 run --config-file staging-configuration.config.js  --spec 'cypress/e2e/ui-tests/*'"
+    "cy:run:ui:staging": "npx cypress@10 run --config-file staging-configuration.config.js  --spec 'cypress/e2e/ui-tests/*'",
+    "cy:run:db:staging": "npx cypress@10 run  --spec 'cypress/e2e/database-testing/*'"
   },
   "repository": {
     "type": "git",
