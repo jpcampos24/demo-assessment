@@ -4,7 +4,8 @@
   "description": "This repo is going to envolve all the demo assessment needed for a seniority position",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open:qa": "npx cypress@10 open --config-file staging-configuration.config.js",
+    "cy:run:qa": "npx cypress@10 run --config-file staging-configuration.config.js"
   },
   "repository": {
     "type": "git",

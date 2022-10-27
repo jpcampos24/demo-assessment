@@ -7,7 +7,9 @@ export class HomePage {
 
     //navigate to the main page to test
     navigate(){
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        let url = Cypress.config().baseUrlUI;
+        cy.visit(url);
+        //cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     }
     
     //validate the main page load correctly

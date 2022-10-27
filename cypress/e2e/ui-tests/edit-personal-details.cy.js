@@ -1,7 +1,7 @@
 /// <reference types="@cypress/xpath" />
 
-import { HomePage } from "../page-objects/home-page"
-import { MyInfoPage } from "../page-objects/myinfo-page"
+import { HomePage } from "../../page-objects/home-page"
+import { MyInfoPage } from "../../page-objects/myinfo-page"
 
 
 describe('edit myInfo details', () => {

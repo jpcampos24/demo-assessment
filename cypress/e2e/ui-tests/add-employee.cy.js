@@ -1,7 +1,7 @@
 /// <reference types="@cypress/xpath" />
 
-import { HomePage } from "../page-objects/home-page"
-import { PimPage } from "../page-objects/pim-page"
+import { HomePage } from "../../page-objects/home-page"
+import { PimPage } from "../../page-objects/pim-page"
 
 describe('add a new employee to the HRM', () => {
     const homePage = new HomePage()

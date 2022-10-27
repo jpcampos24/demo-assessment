@@ -1,6 +1,6 @@
 /// <reference types="@cypress/xpath" />
 
-import { HomePage } from "../page-objects/home-page"
+import { HomePage } from "../../page-objects/home-page"
 
 describe('Login into OragenHRM page', () => {
     const homePage = new HomePage()
