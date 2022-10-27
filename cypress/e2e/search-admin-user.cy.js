@@ -11,24 +11,24 @@ describe('Search an existing admin user', () => {
     beforeEach('Login before the changes',() => {
         homePage.setUpViewport()
         homePage.navigate()
-        homePage.loginUser('Admin')
-        homePage.loginPassword('admin123')
+        homePage.loginUser(Cypress.env('LOGIN_DATA').USER)
+        homePage.loginPassword(Cypress.env('LOGIN_DATA').PASSWORD)
         homePage.loginButton()
 
         adminPage.adminPanel()
-        adminPage.panelValidation('Admin')
+        adminPage.panelValidation(Cypress.env('SEARCH_USER_DATA').PANEL_VALIDATION)
     })
 
     //Search user by Username
     it('Search user by Username', () => {
-        adminPage.searchUsername('Admin')
+        adminPage.searchUsername(Cypress.env('SEARCH_USER_DATA').USER_ROLE)
         adminPage.search()
     })
 
     //search user by Username and Employee name
     it('Search user by Username and role', () => {
-        adminPage.searchUsername('Admin')
-        adminPage.searchEmployeeName('fgh Collings')
+        adminPage.searchUsername(Cypress.env('SEARCH_USER_DATA').USER_ROLE)
+        adminPage.searchEmployeeName(Cypress.env('SEARCH_USER_DATA').EMPLOYEE_NAME)
         adminPage.search()
     })
 

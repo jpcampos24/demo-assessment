@@ -14,8 +14,8 @@ describe('Login into OragenHRM page', () => {
 
     //login into the main page
     it('should send the credentials and login', () => {
-        homePage.loginUser('Admin')
-        homePage.loginPassword('admin123')
+        homePage.loginUser(Cypress.env('LOGIN_DATA').USER)
+        homePage.loginPassword(Cypress.env('LOGIN_DATA').PASSWORD)
         homePage.loginButton()
     })
 

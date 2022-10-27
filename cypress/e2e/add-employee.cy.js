@@ -11,8 +11,8 @@ describe('add a new employee to the HRM', () => {
     beforeEach('Login before the changes',() => {
         homePage.setUpViewport()
         homePage.navigate()
-        homePage.loginUser('Admin')
-        homePage.loginPassword('admin123')
+        homePage.loginUser(Cypress.env('LOGIN_DATA').USER)
+        homePage.loginPassword(Cypress.env('LOGIN_DATA').PASSWORD)
         homePage.loginButton()
     })
 
@@ -20,10 +20,10 @@ describe('add a new employee to the HRM', () => {
     it('add a new Employee', () => {
         pimPage.goToPim()
         pimPage.clickAddNewUser()
-        pimPage.firstName('Juan')
-        pimPage.middleName('test')
-        pimPage.lastName('Test')
-        pimPage.empoyeePhoto('cypress/images/employeePhoto.png')
+        pimPage.firstName(Cypress.env('ADD_EMPLOYE_DATA').FIRST_NAME)
+        pimPage.middleName(Cypress.env('ADD_EMPLOYE_DATA').MIDDLE_NAME)
+        pimPage.lastName(Cypress.env('ADD_EMPLOYE_DATA').LAST_NAME)
+        pimPage.empoyeePhoto(Cypress.env('ADD_EMPLOYE_DATA').PHOTO)
         pimPage.saveEmployee()
     })
 })

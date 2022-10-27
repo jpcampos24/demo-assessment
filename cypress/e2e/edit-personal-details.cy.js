@@ -12,17 +12,17 @@ describe('edit myInfo details', () => {
     beforeEach('Login before the changes',() => {
         homePage.setUpViewport()
         homePage.navigate()
-        homePage.loginUser('Admin')
-        homePage.loginPassword('admin123')
+        homePage.loginUser(Cypress.env('LOGIN_DATA').USER)
+        homePage.loginPassword(Cypress.env('LOGIN_DATA').PASSWORD)
         homePage.loginButton()
     })
 
     //edit personal details of the admin user
     it('should edit the information of the admin user', () =>{
         myInfoPage.goToMyInfo()
-        myInfoPage.changeNicknameTo('JuanchoTest')
-        myInfoPage.licenseExpirationDate('2022-12-12')
-        myInfoPage.changeBloodType('O+')
+        myInfoPage.changeNicknameTo(Cypress.env('EDIT_PERSONAL_DETAILS_DATA').NICK_NAME)
+        myInfoPage.licenseExpirationDate(Cypress.env('EDIT_PERSONAL_DETAILS_DATA').LICENSE_EXPIRATION_DATE)
+        myInfoPage.changeBloodType(Cypress.env('EDIT_PERSONAL_DETAILS_DATA').BLOOD_TYPE)
         myInfoPage.savePersonalDetails()
 
     })
