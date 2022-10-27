@@ -13,11 +13,16 @@ pipeline{
 
     stages {
 
-        stage(' Testting e2e'){
+        stage('UI Testing'){
             steps {
                  sh 'npm install'
-                 sh 'npm run cy:run:staging --headless --spec "cypress/e2e/api-tests/*"'
-                 sh 'npm run cy:run:staging --headless --spec "cypress/e2e/ui-tests/*"'
+                 sh 'npm run cy:run:ui:staging'
+            }
+        }
+        
+        stage('API Testing'){
+            steps {                
+                 sh 'npm run cy:run:api:staging'
             }
         }
 
