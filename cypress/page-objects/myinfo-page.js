@@ -5,11 +5,6 @@ export class MyInfoPage {
         cy.get(':nth-child(6) > .oxd-main-menu-item').click()
     }
 
-    //change Nickname
-    changeNicknameTo(nicknameText){
-        cy.get(':nth-child(1) > .oxd-grid-3 > .oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input').type(nicknameText)
-    }
-
     //change license expiration date
     licenseExpirationDate(dateExpiration){
         cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input').type(dateExpiration)

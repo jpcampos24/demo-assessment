@@ -20,7 +20,6 @@ describe('edit myInfo details', () => {
     //edit personal details of the admin user
     it('should edit the information of the admin user', () =>{
         myInfoPage.goToMyInfo()
-        myInfoPage.changeNicknameTo(Cypress.env('EDIT_PERSONAL_DETAILS_DATA').NICK_NAME)
         myInfoPage.licenseExpirationDate(Cypress.env('EDIT_PERSONAL_DETAILS_DATA').LICENSE_EXPIRATION_DATE)
         myInfoPage.changeBloodType(Cypress.env('EDIT_PERSONAL_DETAILS_DATA').BLOOD_TYPE)
         myInfoPage.savePersonalDetails()
