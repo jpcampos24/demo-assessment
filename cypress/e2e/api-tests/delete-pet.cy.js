@@ -6,7 +6,7 @@ describe('Delte a pet to the store', () => {
             cy.api({
                 method: 'DELETE',
                 api_key: 'special-key',
-                url: '/pet/123456789'
+                url: 'https://petstore.swagger.io/v2/pet/123456789'
             }).then(({status}) => {
                 expect(status).to.eq(200)
             })

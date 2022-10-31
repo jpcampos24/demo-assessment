@@ -17,6 +17,7 @@ pipeline{
             steps {
                  sh 'npm install'
                  sh 'npm run cy:run:ui:staging'
+                 sh 'npm run cy:run:ui:fixtures:staging'
             }
         }
         

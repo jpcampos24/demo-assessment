@@ -1,0 +1,13 @@
+{
+   "loginInfo": {
+        "username": "Admin",
+        "password": "admin123"
+   },
+
+   "employeeData": {
+    "firstName": "Juan",
+    "middleName": "test",
+    "lastName": "Test",
+    "photo": "cypress/images/employeePhoto.png"
+   }
+}

@@ -5,7 +5,7 @@ describe('Add a new pet to the store', () => {
         it('Add new pet - POST', () => {
             cy.api({
                 method: 'POST',
-                url: '/pet',
+                url: 'https://petstore.swagger.io/v2/pet',
                 body: {
                     "id": 123456789,
                     "category": {

@@ -21,7 +21,7 @@ function queryTestDb(query, config) {
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://petstore.swagger.io/v2',
+    baseUrl: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',
     env: {
       db: {
         "host": "127.0.0.1",
